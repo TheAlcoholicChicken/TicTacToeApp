@@ -14,6 +14,7 @@ class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.vanillaState();
+    this.score = 0;
   }
 
   vanillaState () {
@@ -58,12 +59,20 @@ class Board extends React.Component {
   render() {
     const winner = calculateWinner(this.state.squares);
     let status;
+    let score = this.score;
     if (winner) {
       status = 'Winner: ' + winner;
+      if(winner == 'X')
+        this.score += 1;
+      else
+        this.score = 0;
     } else {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
 
+    
+   
+    console.log(score);
     return (
       <div>
         <div className="status">{status}</div>
