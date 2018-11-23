@@ -1,7 +1,7 @@
 {
   "name": "fullstack_app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Pre-requisites: Node.js and Mongo downloaded",
   "main": "index.js",
   "scripts": {
     "start": "concurrently \"cd backend && node server.js\" \"cd client && npm start\""
@@ -12,9 +12,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^4.0.1"
+    "concurrently": "^4.0.1",
+    "express": "^4.16.4"
   },
   "engines": {
     "node": "10.x"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheAlcoholicChicken/TicTacToeApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TheAlcoholicChicken/TicTacToeApp/issues"
+  },
+  "homepage": "https://github.com/TheAlcoholicChicken/TicTacToeApp#readme"
 }
