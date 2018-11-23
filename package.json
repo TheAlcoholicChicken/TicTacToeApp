@@ -6,10 +6,15 @@
   "scripts": {
     "start": "concurrently \"cd backend && node server.js\" \"cd client && npm start\""
   },
-  "keywords": [],
+  "keywords": [
+    "heroku"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "concurrently": "^4.0.1"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }
