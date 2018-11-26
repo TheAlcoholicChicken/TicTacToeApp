@@ -8,7 +8,7 @@ var validator = require('express-validator');
 
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('mongodb://username:abcd1234@ds017193.mlab.com:17193/nodetest1')
+var db = monk('mongodb://admin:12345a@ds247852.mlab.com:47852/tictactoe')
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
