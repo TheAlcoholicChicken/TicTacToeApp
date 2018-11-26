@@ -9,7 +9,7 @@ const app = express();
 const router = express.Router();
 
 //Mongo db
-const dbRoute = "mongodb://tsu:qwaszx789@ds247852.mlab.com:47852/tictactoe";
+const dbRoute = "mongodb://tsu:123456a@ds247852.mlab.com:47852/tictactoe";
 
 mongoose.connect(
     dbRoute,

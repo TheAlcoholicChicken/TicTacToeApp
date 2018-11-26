@@ -50,6 +50,12 @@ class App extends Component {
     axios.post("/api/putData", {
       id: idToBeAdded,
       message: message
+    })
+    .then(function(response) {
+      console.log(response);
+    })
+    .catch(function(error) {
+      console.log(error);
     });
   };
 
