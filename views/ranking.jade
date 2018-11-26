@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  body(onload="populateRank(ranking)")
+    h1.
+        Rankings
+    ul
+        each user, i in ranking
+          li
+            a(href="mailto:#{user.data.highscore}")= user.data.username

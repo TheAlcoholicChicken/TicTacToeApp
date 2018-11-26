@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  body(onload="load_auth()")
+    h1#headingTitle Hangman Game
+    div.container
+      div#authmessage
+    
+    div#gameContent.container
+      div#buttonHolder
+      div#wordHolder
+      div#defHolder
+      div#message
+      button#resetBtn(class="btn btn-primary btn-lg" onclick="resetClicked()") Reset/Start
+    
+    form#formAddUser(name="addscore", method="post", action="/addscore")
+      div#addUser.container
+        div#scoreHolder Score: 
+        input#scoreNum(type="disabled" size=2 value=0 placeholder="score" name="score")
+        div#chancesHolder Chances:
+        span#chanceNum 7
+        button#saveBtn(class="btn btn-action" type="submit" disabled) Save Score
