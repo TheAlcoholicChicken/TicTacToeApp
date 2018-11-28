@@ -1,3 +1,3 @@
 module.exports = {
-    token: 'vQDHZcHguMlyHBGoIqFD' // auth token
+    token: 'vRDHZcHguMlyHBGoIqFD' // auth token
 };
