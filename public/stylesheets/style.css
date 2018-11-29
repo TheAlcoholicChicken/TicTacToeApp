@@ -15,38 +15,38 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 100px 100px 100px;
-    background-color: azure;
-    border: 5px solid blue;
+    background-color: black;
+    border: 5px solid black;
     text-align: center;
   }
   
   .gameContainer > .blue {
-    background-color: blue;
+    background-color: black;
     color: white;
     padding: 20px;
     font-size: 48px;
   }
   
   .gameContainer > .red {
-    background-color: red;
-    color: white;
+    background-color: white;
+    color: black;
     padding: 20px;
     font-size: 48px;
   }
   
   .gameContainer > .gray {
     background-color: gray;
-    color: purple;
+    color: rgb(12, 75, 168);
     padding: 24px;
     font-size: 24px;
   }
   
   .gameContainer > div {
-    border: 2px solid blue;
-    border-radius: 25px;
-    background-color: lightgray;
+    border: 2px solid rgb(0, 119, 110);
+    border-radius: 15px;
+    background-color:rgb(22, 182, 170);
     padding: 35px;
-    color: green;
+    color: grey;
   }
   
   .center {
@@ -54,7 +54,7 @@
   }
   
   .yellow {
-    background-color: yellow;
+    background-color:rgb(109, 152, 216);
   }
   
   .blackText {
@@ -63,21 +63,21 @@
   }
   
   .yellowBig {
-    background-color: yellow;
+    background-color: rgb(70, 123, 201);
     font-size: 36px;
   }
   
   .redBig {
-    background-color: red;
+    background-color: gba(194, 108, 197, 0.76);
     font-size: 36px;
   }
   
   .red {
-    background-color: red;
+    background-color: rgba(38, 100, 191);
   }
   
   #resetButton {
-    background-color: blue;
+    background-color: rgb(96, 211, 203);
   }
   
   .displayNone {

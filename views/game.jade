@@ -5,13 +5,13 @@ block content
     h1.center Tic-Tac-Toe
     h3
       form#playerForm.center(name="askuser", method="post", action="/askuser")
-        div Would you like to be X or O?
+        div Would you like to beconst &#10084; or &#9733;?
         br
         br
-        input(type="radio", name="radio", value="X")
-        | X
-        input(type="radio", name="radio", value="O")
-        | O
+        input(type="radio", name="radio", value="heart")
+        | &#10084;
+        input(type="radio", name="radio", value="star")
+        | &#9733;
     h3
       div#playerOne.center
     div#gameResult.center
