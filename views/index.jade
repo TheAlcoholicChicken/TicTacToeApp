@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    body(onload="checkregister()")
+        h1.
+            Landing
+        form#formLogin(name="checkuser", method="post", action="/checkuser")
+            h2.
+                Log in to play
+            input#emailInput(type="email" placeholder="Email" name="loginemail")
+            input#pwInput(type="password" placeholder="Password" name="loginpw")
+            button#registerBtn(class="btn btn-action" type="submit") Login
+        
+        form#formAddUser(name="adduser", method="post", action="/adduser")
+            h2.
+                Make an account today
+            input#inputUserName(type="text", placeholder="username", name="username")
+            input#regEmailInput(type="email" placeholder="Email" name="useremail")
+            input#regPwInput(type="password" placeholder="Password" name="userpw")
+            button#regLoginBtn(class="btn btn-secondary" type="submit") Register
+            button#logoutBtn(class="btn btn-action hide") Log Out

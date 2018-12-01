@@ -1,0 +1,95 @@
+.infoContainer {
+    display: grid;
+    grid-gap: auto;
+    grid-template-columns: 33% 33% 33%;
+    text-align: center;
+  }
+  
+  .infoBox {
+    background-color: lightgray;
+    color: white;
+    padding: 20px;
+  }
+  
+  .gameContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px 100px;
+    background-color: black;
+    border: 5px solid black;
+    text-align: center;
+  }
+  
+  .gameContainer > .blue {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    font-size: 48px;
+  }
+  
+  .gameContainer > .red {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    font-size: 48px;
+  }
+  
+  .gameContainer > .gray {
+    background-color: gray;
+    color: rgb(12, 75, 168);
+    padding: 24px;
+    font-size: 24px;
+  }
+  
+  .gameContainer > div {
+    border: 2px solid rgb(0, 119, 110);
+    border-radius: 15px;
+    background-color:rgb(22, 182, 170);
+    padding: 35px;
+    color: grey;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  .yellow {
+    background-color:rgb(109, 152, 216);
+  }
+  
+  .blackText {
+    color: black;
+    font-size: 18px;
+  }
+  
+  .yellowBig {
+    background-color: rgb(70, 123, 201);
+    font-size: 36px;
+  }
+  
+  .redBig {
+    background-color: gba(194, 108, 197, 0.76);
+    font-size: 36px;
+  }
+  
+  .red {
+    background-color: rgba(38, 100, 191);
+  }
+  
+  #resetButton {
+    background-color: rgb(96, 211, 203);
+  }
+  
+  .displayNone {
+    display: none;
+  }
+  
+  .unclickable {
+    pointer-events: none;
+  }
+
+  .scoreContainer {
+    margin: auto;
+    width: 100%;
+    display: block;
+  }

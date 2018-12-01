@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  body(onload="load_auth()")
+    h1.center Tic-Tac-Toe
+    h3
+      form#playerForm.center(name="askuser", method="post", action="/askuser")
+        div Would you like to be &#10084; or &#9733;?
+        br
+        br
+        input(type="radio", name="radio", value="heart")
+        | &#10084;
+        input(type="radio", name="radio", value="star")
+        | &#9733;
+    h3
+      div#playerOne.center
+    div#gameResult.center
+    div#congratsOrSorry.center
+    section#save(class="displayNone")
+      form#formAddUser(name="addscore", method="post", action="/addscore")
+        div#addUser.container
+          div#scoreHolder Score: 
+          input#scoreNum(type="disabled" size=2 value=0 placeholder="score" name="score" readonly)
+          button#saveBtn(class="btn btn-action" type="submit" disabled) Save Score
+
+    section#gameInfo(class="infoContainer displayNone")
+      div#yourTurn.infoBox Your turn
+      button#resetButton.infoBox Reset Game
+      div#compTurn.infoBox Computer's turn
+    div#counter(class="center displayNone")
+    section#gameGrid(class="gameContainer displayNone")
+      div#one(class="item item-1") item-1
+      div#two(class="item item-2") item-2
+      div#three(class="item item-3") item-3
+
+      div#four(class="item item-4") item-4
+      div#five(class="item item-5") item-5
+      div#six(class="item item-6") item-6
+
+      div#seven(class="item item-7") item-7
+      div#eight(class="item item-8") item-8
+      div#nine(class="item item-9") item-9
+
+
+    
