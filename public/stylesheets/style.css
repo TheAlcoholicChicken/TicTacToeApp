@@ -87,3 +87,9 @@
   .unclickable {
     pointer-events: none;
   }
+
+  .scoreContainer {
+    margin: auto;
+    width: 100%;
+    display: block;
+  }

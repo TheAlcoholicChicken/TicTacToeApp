@@ -5,7 +5,7 @@ block content
     h1.center Tic-Tac-Toe
     h3
       form#playerForm.center(name="askuser", method="post", action="/askuser")
-        div Would you like to beconst &#10084; or &#9733;?
+        div Would you like to be &#10084; or &#9733;?
         br
         br
         input(type="radio", name="radio", value="heart")
@@ -16,6 +16,13 @@ block content
       div#playerOne.center
     div#gameResult.center
     div#congratsOrSorry.center
+    section#save(class="displayNone")
+      form#formAddUser(name="addscore", method="post", action="/addscore")
+        div#addUser.container
+          div#scoreHolder Score: 
+          input#scoreNum(type="disabled" size=2 value=0 placeholder="score" name="score" readonly)
+          button#saveBtn(class="btn btn-action" type="submit" disabled) Save Score
+
     section#gameInfo(class="infoContainer displayNone")
       div#yourTurn.infoBox Your turn
       button#resetButton.infoBox Reset Game

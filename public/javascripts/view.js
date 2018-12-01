@@ -5,10 +5,11 @@
     script.type = 'text/javascript';
     script.onload = function () {
         var $ = window.jQuery;
+        var currentScore = 0;
 
         function offerLeadershipBoard() {
-            btnSave = document.getElementById("saveBtn");
-            btnSave.disabled = false;
+             let btnSave = document.getElementById("saveBtn");
+             $("save").html(btnSave);
         }
 
         function clickButton(event) {
@@ -98,7 +99,7 @@
         function getComputer() {
             var playerOne = getPlayerOne()
             var computer;
-           
+
             var computer = (playerOne === "heart") ? ("&#9733;") : ("&#10084;")
             return computer
         }
@@ -110,15 +111,18 @@
                 $("#playerForm").removeClass("displayNone")
                 document.getElementById("playerForm").reset()
                 $("#playerOne, #gameResult, #congratsOrSorry").html("")
-                $("#gameInfo, #gameGrid, #congratsOrSorry").addClass("displayNone")
+                $("#gameInfo, #gameGrid, #congratsOrSorry, #save").addClass("displayNone")
                 $(".item").removeClass("blue red gray unclickable")
                 $(".item").html("&#10084;/&#9733;")
+                // let btnSave = document.getElementById("saveBtn");
+                // btnSave.disabled = true;
             })
         }
         hardResetOnclick()
 
 
         function reset() { //resets game for new game
+
             console.log("reset: resetting game, for new game...")
             $("#gameInfo").removeClass("displayNone")
             $("#gameResult, #congratsOrSorry").addClass("displayNone")
@@ -140,7 +144,7 @@
 
         function checkForWinner() {
             console.log("checking for winner...")
-            var winner
+            var winner;
 
             var eightWinningCombos = [
                 "#one.COLOR, #two.COLOR, #three.COLOR",
@@ -162,19 +166,37 @@
 
             if (blueWins) { //playerOne is always blue
                 playerOneWins()
+                increaseScore();
                 return winner = blueWins
             }
             if (redWins) { //red is computer
                 computerWins()
+                decreaseScore();
                 return winner = redWins
             }
             if (draw) {
                 drawGame()
+                decreaseScore();
                 return winner = draw
             } else {
                 console.log('game on...')
             }
+            console.log("score: ", currentScore);
         }
+
+        //Increase the score by num
+        function increaseScore() {
+            let scoreHolder = document.getElementById("scoreNum");
+            currentScore += 1;
+            scoreHolder.value = currentScore;
+        };
+
+        // Decrese the score to 0 
+        function decreaseScore() {
+            let scoreHolder = document.getElementById("scoreNum");
+            currentScore = 0;
+            scoreHolder.value = currentScore;
+        };
 
         function getWinningArray(array, string) {
             return array.map(function (combo) {
@@ -188,6 +210,7 @@
             console.log(`${playerOne} wins!`)
             $("#gameResult").html(`<span class='yellowBig'>${playerOne} wins!</span>`)
             $("#congratsOrSorry").html("<span class='yellow'>Congratulations! You won!</span>")
+            $("#save").removeClass("displayNone")
             winLoseOrDraw()
         }
 
@@ -196,6 +219,7 @@
             console.log(`${computer} wins!`)
             $("#gameResult").html(`<span class='redBig'>${computer} wins!</span>`)
             $("#congratsOrSorry").html("<span class='red'>Sorry, you lost.</span>")
+            $("#save").removeClass("displayNone")
             winLoseOrDraw()
         }
 
@@ -203,12 +227,16 @@
             console.log('Draw game!')
             $("#gameResult").html(`<span class='redBig'>Game is a draw.</span>`)
             $("#congratsOrSorry").html("<span>Game ended in a draw.</span>")
+            $("#save").removeClass("displayNone")
             winLoseOrDraw()
         }
 
         function winLoseOrDraw() {
             $("#gameResult, #congratsOrSorry").removeClass("displayNone")
-            $("#gameInfo").addClass("displayNone")
+            $("#save").removeClass("displayNone")
+            let btnSave = document.getElementById("saveBtn");
+            btnSave.disabled = false;
+           // $("#gameInfo").addClass("displayNone")
             disableRemainingItems()
         }
 
@@ -229,7 +257,7 @@
             }
             if (winner) {
                 console.log('game over, resetting game')
-                setTimeout(reset, 3000) //call reset after 3 seconds...
+                offerLeadershipBoard();
             }
         }
         playGame()

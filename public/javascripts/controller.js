@@ -8,7 +8,7 @@ function load_auth() {
         const btnLogout       = document.getElementById('logoutBtn');
         const authmsg         = document.getElementById('authmessage');
         const gameContent     = document.getElementById('gamecontent');
-        const btnSave         = document.getElementById('saveBtn');
+        //const btnSave         = document.getElementById('saveBtn');
     
         // Get Elements
         var boardPosition     = [];
