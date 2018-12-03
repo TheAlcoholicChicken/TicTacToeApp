@@ -1,3 +1,3 @@
 module.exports = {
-    token: 'vRDHZcHguMlyHBGoIqFD' // auth token
+    token: 'vRDHZcHguMlyHBGoIqFDELrIFRrM0hPqiXyYHM9N' // auth token
 };
