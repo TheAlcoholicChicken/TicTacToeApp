@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
   if(userID != null) {
     res.redirect('game');
   } else {
-    res.render('index', { title: 'Express' });
+    res.render('index', { title: 'TicTacToeApp' });
   }
 });
 
@@ -91,7 +91,7 @@ router.post('/logout', function(req, res) {
   var db = req.db;
   userID = null;
   console.log("Login failed");
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'TicTacToeApp' });
 });
 
 /* POST to login service */
@@ -116,7 +116,7 @@ router.post('/checkuser', function(req, res) {
       res.redirect("game");
     } else {
       console.log("Login failed");
-      res.redirect("index");
+      res.render('index', { title: 'TicTacToeApp' });
     }
   });
 });
@@ -162,6 +162,9 @@ router.post('/checkbadgeuser', function(req, res) {
           }
         }
       });
+    } else {
+      console.log("Login failed");
+      res.render('index', { title: 'TicTacToeApp' });
     }
   });
 });
