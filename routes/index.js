@@ -135,7 +135,33 @@ router.post('/checkbadgeuser', function(req, res) {
     json: true,
     body: myJSONObject
   }, function(error, response, body) {
-    console.log(response);
+    if ( !error && response.statusCode == 200) {
+      console.log(body)
+      
+      isUser = false;
+      db.collection("Player").find({}, {}, function(e, docs) {  
+        docs.forEach(element => {
+          if(element.core_app_id == body.user_id) {
+            userID = element.core_app_id;
+            isUser = true;
+          } 
+        });
+        // log user in
+        if(isUser) {
+          console.log("You are now logged in");
+          res.redirect("game");
+        } 
+        //Create user
+        else {
+          userID = body.user_id;
+          console.log(userID);
+          userCreated = createBadgeUser(db, userID)
+          if(userCreated) {
+            res.redirect("game");
+          }
+        }
+      });
+    }
   });
 });
 
@@ -178,6 +204,32 @@ router.post('/adduser', function(req, res) {
     }
   });
 });
+
+function createBadgeUser(db, id) {
+  // Set collection
+  var userTable = db.get('Player');
+
+  //Submit to db
+  userTable.insert({
+    "user_id" : null,
+    "core_app_id" : id,
+    "data": {
+      "username" : null,
+      "email" : null,
+      "password" : null,
+      "highscore" : 0,
+      "best_ranking": 0
+    }
+  }, function (err, doc) {
+    if(err) {
+      res.send("There was a problem adding the information to the database");
+      return false;
+    }
+    else {
+      return true;
+    }
+  });
+}
 
 function sortCollection(docs) {
   count = 0;
