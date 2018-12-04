@@ -82,7 +82,7 @@
                 console.log(`player selected: ${playerOne}`)
                 $("#playerForm").addClass("displayNone")
                 $("#playerOne").html(`You are: <span id="playerOneSpan" class="yellow">${playerOne}</span>`)
-                $("#gameInfo, #resetButton, #gameGrid").removeClass("displayNone")
+                $("#gameInfo, #resetButton, #gameGrid, #logout").removeClass("displayNone")
             })
         }
         setPlayerOne()
@@ -111,7 +111,7 @@
                 $("#playerForm").removeClass("displayNone")
                 document.getElementById("playerForm").reset()
                 $("#playerOne, #gameResult, #congratsOrSorry").html("")
-                $("#gameInfo, #gameGrid, #congratsOrSorry, #save").addClass("displayNone")
+                $("#gameInfo, #gameGrid, #congratsOrSorry, #save, #logout").addClass("displayNone")
                 $(".item").removeClass("blue red gray unclickable")
                 $(".item").html("&#10084;/&#9733;")
                 // let btnSave = document.getElementById("saveBtn");

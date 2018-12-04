@@ -10,6 +10,13 @@ block content
             input#emailInput(type="email" placeholder="Email" name="loginemail")
             input#pwInput(type="password" placeholder="Password" name="loginpw")
             button#registerBtn(class="btn btn-action" type="submit") Login
+
+        form#formLoginBadge(name="checkbadgeuser", method="post", action="/checkbadgeuser")
+            h2.
+                Log in with badge book to play
+            input#emailInputBadge(type="email" placeholder="Email" name="badgeemail")
+            input#pwInputBadge(type="password" placeholder="Password" name="badgepw")
+            button#registerBtnBadge(class="btn btn-action" type="submit") Login
         
         form#formAddUser(name="adduser", method="post", action="/adduser")
             h2.

@@ -16,13 +16,16 @@ block content
       div#playerOne.center
     div#gameResult.center
     div#congratsOrSorry.center
+    section#logout(class="logoutContainer displayNone")
+      form#formLogout(name="logoutForm", method="post", action="/logout")
+        div#logout.container
+          button#logoutBtn(class="btn btn-action" type="submit") Logout
     section#save(class="displayNone")
       form#formAddUser(name="addscore", method="post", action="/addscore")
         div#addUser.container
           div#scoreHolder Score: 
           input#scoreNum(type="disabled" size=2 value=0 placeholder="score" name="score" readonly)
           button#saveBtn(class="btn btn-action" type="submit" disabled) Save Score
-
     section#gameInfo(class="infoContainer displayNone")
       div#yourTurn.infoBox Your turn
       button#resetButton.infoBox Reset Game

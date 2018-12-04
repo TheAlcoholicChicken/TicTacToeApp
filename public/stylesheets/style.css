@@ -88,8 +88,14 @@
     pointer-events: none;
   }
 
-  .scoreContainer {
+  .scoreContainer { 
     margin: auto;
     width: 100%;
     display: block;
+  }
+ 
+  .logoutContainer {
+    position: absolute;
+    top: 0px;
+    left: 0px;
   }

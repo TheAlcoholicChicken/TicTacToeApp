@@ -3,6 +3,8 @@ var router = express.Router();
 var userID = null;
 var mongo = require('mongodb');
 var monk = require('monk');
+var request = require('request')
+var cconfig = require('../config.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -41,7 +43,6 @@ router.get('/ranking', function(req, res) {
     })
   });
 });
-
 /* GET Userlist Page. */
 router.get('/userlist', function(req, res) {
   var db = req.db;
@@ -84,6 +85,15 @@ router.post('/addscore', function(req, res) {
   res.redirect('game');
 });
 
+
+/* Logs out the user */
+router.post('/logout', function(req, res) {
+  var db = req.db;
+  userID = null;
+  console.log("Login failed");
+  res.render('index', { title: 'Express' });
+});
+
 /* POST to login service */
 /* TODO: fix the query */
 router.post('/checkuser', function(req, res) {
@@ -108,6 +118,24 @@ router.post('/checkuser', function(req, res) {
       console.log("Login failed");
       res.redirect("index");
     }
+  });
+});
+
+/* POST to login with badge */
+router.post('/checkbadgeuser', function(req, res) {
+  var myJSONObject = {
+    user_email: req.body.badgeemail,
+    password: req.body.badgepw,
+    token: cconfig.core_token
+  };
+
+  request({
+    url: "https://management-system-api.herokuapp.com/user/login",
+    method: "POST",
+    json: true,
+    body: myJSONObject
+  }, function(error, response, body) {
+    console.log(response);
   });
 });
 
