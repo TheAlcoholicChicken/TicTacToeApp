@@ -123,6 +123,7 @@ router.post('/checkuser', function(req, res) {
 
 /* POST to login with badge */
 router.post('/checkbadgeuser', function(req, res) {
+  var db = req.db;
   var myJSONObject = {
     user_email: req.body.badgeemail,
     password: req.body.badgepw,
@@ -149,7 +150,7 @@ router.post('/checkbadgeuser', function(req, res) {
         // log user in
         if(isUser) {
           console.log("You are now logged in");
-          res.redirect("game");
+          res.render('game', {title: 'Landing Page'});
         } 
         //Create user
         else {
