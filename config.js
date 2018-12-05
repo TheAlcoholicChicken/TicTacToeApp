@@ -1,4 +1,4 @@
 module.exports = {
-    token: 'vQDHZcHguMlyHBGoIqFD', // auth token
-    core_token: '7xaEiHzycxacTJop3KCAHh3UKKSiepU6DLPqVTng55C' //core_app token
+    token: 'vQDHZcHguMlyHBGoIqFDJ89lHuuOzggHgT5C7nO0', // auth token
+    core_token: 'ic8qKWbOGrSE9vHFezuM0eE556q9ZvatwDKnsrf0rJN' //core_app token
 };
