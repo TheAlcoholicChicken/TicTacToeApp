@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
 
 /*GET Game page. */
 router.get('/game', function(req, res) {
-  res.render('game', {title: 'Landing Page'});
+  res.render('game', {title: 'TicTacToeApp'});
 });
 
 /* GET user ranking page */
@@ -154,12 +154,30 @@ router.post('/checkbadgeuser', function(req, res) {
         } 
         //Create user
         else {
+          // Set userID
           userID = body.user_id;
-          console.log(userID);
-          userCreated = createBadgeUser(db, userID)
-          if(userCreated) {
-            res.redirect("game");
-          }
+          // Set collection
+          var userTable = db.get('Player');
+
+          //Submit to db
+          userTable.insert({
+            "user_id": null,
+            "core_app_id": userID,
+            "data": {
+              "username": null,
+              "email": null,
+              "password": null,
+              "highscore": 0,
+              "best_ranking": 0
+            }
+          }, function (err, doc) {
+            if (err) {
+              res.send("There was a problem adding the information to the database");
+            }
+            else {
+              res.redirect("game");
+            }
+          });
         }
       });
     } else {
