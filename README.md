@@ -12,3 +12,6 @@ localhost:3000/newuser  to register yourself in the database.
 If success, it will take you to localhost:3000/userlist and you should be able to see yourself on there.
 
 Make sure to restart Node anytime a change is made in the javascript. No need for Jade, just refresh the page.
+
+# Running the API with Postman
+![postman](https://github.com/TheAlcoholicChicken/TicTacToeApp/blob/master/images/postmanapi.PNG?raw=true)
